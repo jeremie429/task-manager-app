@@ -9,11 +9,8 @@ body{
 
 #add-task-container{
     width: 300px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 0 3px;
+
     display: flex;
-    margin: 20px 15px;
 }
 
 

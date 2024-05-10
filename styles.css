@@ -6,25 +6,20 @@ body{
 }
 
 .container{
-    padding: 0 20px;
-    overflow: scroll;  
-}
-
-.container::-webkit-scrollbar{
-    display: none;
+    width: 50%;
 }
 
 #add-task-container{
-    width: 350px;
+    width: 100%;
     padding: 20px 10px;
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 0 3px;
     display: flex;
     margin-bottom: 20px;
-   
-
 }
+
+
 
 input{
     flex: 5;

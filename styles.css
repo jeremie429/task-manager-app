@@ -10,6 +10,7 @@ body{
 #add-task-container{
     width: 300px;
 margin-bottom : 20px;
+    margin-top: 20px;
     display: flex;
 }
 
@@ -21,6 +22,7 @@ input{
     font-size: 1.2rem;
     padding: 5px;
     outline: none ;
+    border: none;
 }
 
 #add-task{

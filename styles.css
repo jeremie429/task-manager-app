@@ -5,9 +5,7 @@ body{
     align-items: center;  
 }
 
-.container{
-    width: 100%;
-}
+
 
 #add-task-container{
     width: 300px;
@@ -16,7 +14,7 @@ body{
     border-radius: 20px;
     box-shadow: 0 0 3px;
     display: flex;
-    margin-bottom: 20px;
+    margin: 20px 15px;
 }
 
 

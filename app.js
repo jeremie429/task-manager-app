@@ -51,6 +51,7 @@ function updateTasks() {
     taskContainer.appendChild(task);
     inputTask.value = "";
     checkBtn.parentElement.style.textDecoration = el.done ? "line-through" : "";
+    checkBtn.parentElement.style.textDecorationColor = "red"
     checkBtn.addEventListener("click", (e) => {
       e.preventDefault();
       checkBtn.parentElement.style.textDecoration = !el.done

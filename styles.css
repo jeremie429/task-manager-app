@@ -10,7 +10,7 @@ body{
 }
 
 #add-task-container{
-    width: 70%;
+    width: 300px;
     padding: 20px 10px;
     background: #fff;
     border-radius: 20px;
@@ -46,7 +46,7 @@ input{
 }
 
 .task{
-    width: 100%;
+    width: 300px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 3px;

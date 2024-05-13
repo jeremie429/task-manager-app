@@ -84,6 +84,20 @@ input{
     font-size: 1.3rem;
 }
 
+.date-task-submitted{
+    font-size: x-small;
+    color: #ec2c2c;
+    text-align: start;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.task-done{
+    font-size: x-small;
+    color: rgb(26, 9, 175);
+    text-align: end;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .task .deleteTask:hover {
     color: #fff;
     background-color: red;

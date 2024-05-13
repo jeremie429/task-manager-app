@@ -105,7 +105,7 @@ function getDateFormat(currentDate) {
   let formattedDate =
     currentDate.getDate() +
     "-" +
-    currentDate.getMonth() +
+    currentDate.getMonth() +1 +
     "-" +
     currentDate.getFullYear() +
     " " +

@@ -13,10 +13,13 @@ addTask.addEventListener("click", function (e) {
   if (inputTask.value === "") {
     alert("Please enter Task");
   } else {
+    let addedtDate = new Date();
+
     let itemToSave = {
       id: Math.floor(Math.random() * 10000000),
       task: inputTask.value,
       done: false,
+      addedDate: getDateFormat(addedtDate),
     };
     savedTask.push(itemToSave);
     localStorage.setItem("data", JSON.stringify(savedTask));
@@ -33,7 +36,26 @@ function updateTasks() {
     task.setAttribute("id", el.id);
     task.classList.add("task");
     let li = document.createElement("li");
-    li.innerText = el.task;
+
+    let spanDate = document.createElement("span");
+    spanDate.setAttribute("class", "date-task-submitted");
+    spanDate.innerText = el.addedDate || "";
+    let br = document.createElement("br");
+    let br2 = document.createElement("br");
+
+    let spanTask = document.createElement("span");
+
+    spanTask.innerText = el.task;
+
+    let spanDoneDate = document.createElement("span");
+    spanDoneDate.classList.add("task-done");
+    spanDoneDate.innerText = el.doneDate || "";
+
+    li.appendChild(spanDate);
+    li.appendChild(br);
+    li.appendChild(spanTask);
+    li.appendChild(br2);
+    li.appendChild(spanDoneDate);
 
     task.appendChild(li);
 
@@ -50,13 +72,15 @@ function updateTasks() {
 
     taskContainer.appendChild(task);
     inputTask.value = "";
-    checkBtn.parentElement.style.textDecoration = el.done ? "line-through" : "";
+    spanTask.style.textDecoration = el.done ? "line-through" : "";
     checkBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      checkBtn.parentElement.style.textDecoration = !el.done
-        ? "line-through"
-        : "";
+      spanTask.style.textDecoration = !el.done ? "line-through" : "";
       el.done = !el.done;
+      let currentDate = new Date();
+      el.doneDate = getDateFormat(currentDate);
+
+      spanDoneDate.innerText = el.doneDate;
       localStorage.setItem("data", JSON.stringify(savedTask));
     });
 
@@ -75,6 +99,20 @@ function updateTasks() {
   });
 
   //console.log(savedTask);
+}
+
+function getDateFormat(currentDate) {
+  let formattedDate =
+    currentDate.getDate() +
+    "-" +
+    currentDate.getMonth() +
+    "-" +
+    currentDate.getFullYear() +
+    " " +
+    currentDate.getHours() +
+    ":" +
+    currentDate.getMinutes();
+  return formattedDate;
 }
 
 updateTasks();
